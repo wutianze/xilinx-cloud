@@ -4,7 +4,7 @@
 @Email: 1369130123qq@gmail.com
 @Date: 2020-02-03 14:50:50
 @LastEditors  : Sauron Wu
-@LastEditTime : 2020-02-05 14:53:36
+@LastEditTime : 2020-02-05 20:52:12
 @Description: 
 '''
 import tornado.ioloop
@@ -20,11 +20,26 @@ class MainHandler(tornado.web.RequestHandler):
         print(self.request.arguments)
         print(self.get_argument('c',"dd"))
         self.write("Hello")
-
+class ListHandler(tornado.web.RequestHandler):
+    def get(self):
+        #print(self.request.arguments)
+        typeGet = self.get_arguments('type')
+        txts = []
+        if "status" in typeGet:
+            txts.append(server_status())
+        if "capability" in typeGet:
+            txts.append(server_capability())
+        txt = {}
+        for key in txts:
+            if key["info"] != "success":
+                txt = key
+                break
+            txt.update(key)
+        self.write(txt)
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
-        (r"/s",MainHandler),
+        (r"/list",ListHandler),
     ])
 
 if __name__ == "__main__":

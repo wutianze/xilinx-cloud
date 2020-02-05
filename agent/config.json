@@ -1,4 +1,11 @@
 {
+    "localhost":
+    {
+        "idracIp":"127.0.0.1",
+        "idracName":["root","calvin"],
+        "ip":"10.161.176.71",
+        "ipName":["xilinx","xilinx19"]
+    },
     "xshdcg01":
     {
         "idracIp":"10.161.176.61",
