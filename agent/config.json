@@ -1,0 +1,16 @@
+{
+    "xshdcg01":
+    {
+        "idracIp":"10.161.176.61",
+        "idracName":["root","calvin"],
+        "ip":"10.161.176.71",
+        "ipName":["xilinx","xilinx19"]
+    },
+    "xshdcg02":
+    {
+        "idracIp":"10.161.176.62",
+        "idracName":["root","calvin"],
+        "ip":"10.161.176.147",
+        "ipName":["xilinx","xilinx"]
+    }
+}
